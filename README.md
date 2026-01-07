@@ -178,7 +178,7 @@ The `Bank` enum provides a convenient and type-safe way to specify the bank. Her
 | Enum Value | Bank Name | BIN |
 |---|---|---|
 | `Bank.agribank` | Agribank | 970405 |
-| `Bank.vietinbank` | Vietinbank | 970415 |
+| `Bank.vietinbank` | VietinBank | 970415 |
 | `Bank.bidv` | BIDV | 970418 |
 | `Bank.vietcombank` | Vietcombank | 970436 |
 | `Bank.techcombank` | Techcombank | 970407 |

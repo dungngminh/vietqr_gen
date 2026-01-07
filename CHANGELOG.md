@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+- **33 New Banks**: Expanded bank support from 33 to 65 banks based on latest [VietQR API](https://api.vietqr.io/v2/banks)
+  - Digital Banks: CAKE, Ubank (VPBank digital), Timo, Vikki
+  - E-Wallets: MoMo, ViettelMoney, VNPTMoney
+  - Major Banks: ABBANK, ShinhanBank, KBank, CIMB, Woori
+  - Foreign Bank Branches: HSBC, Citibank, DBSBank, StandardChartered, UnitedOverseas, PublicBank
+  - Korean Banks: IBKHN, IBKHCM, KEBHanaHN, KEBHanaHCM, KookminHN, KookminHCM, Nonghyup
+  - Other Banks: CBBank, COOPBANK, IndovinaBank, KienLongBank, MBV, NamABank, PGBank, PVcomBank Pay, SaigonBank, VietABank, VietBank, VBSP, MAFC
+
+### Changed
+- **Updated Bank Names**: Aligned bank names with official VietQR API naming conventions
+- **Bank Replacements**: Updated rebranded banks
+  - `dongABank` → `vikki` (BIN 970406 - Digital bank rebrand)
+  - `oceanbank` → `mbv` (BIN 970414 - Modern Vietnam Bank)
+
+
 ## [1.2.0] - 2024-12-19
 
 ### Added

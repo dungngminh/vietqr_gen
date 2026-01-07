@@ -7,7 +7,7 @@ String calculateCRC16(String data) {
   final bytes = utf8.encode(data);
 
   for (final byte in bytes) {
-    crc ^= (byte << 8);
+    crc ^= byte << 8;
     for (int i = 0; i < 8; i++) {
       if ((crc & 0x8000) != 0) {
         crc = (crc << 1) ^ 0x1021;

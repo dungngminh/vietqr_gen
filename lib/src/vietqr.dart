@@ -229,7 +229,7 @@ class VietQR {
   /// ```
   static VietQRParsedData parse(String payload) {
     if (payload.isEmpty) {
-      throw FormatException('Payload cannot be empty');
+      throw const FormatException('Payload cannot be empty');
     }
 
     // Validate CRC first
@@ -337,7 +337,7 @@ class VietQR {
   /// Validates the CRC checksum of the payload.
   static void _validateCRC(String payload) {
     if (payload.length < 8) {
-      throw FormatException('Payload too short to contain valid CRC');
+      throw const FormatException('Payload is too short to contain a valid CRC');
     }
 
     // Extract CRC field (last 8 characters: 2 for field ID, 2 for length, 4 for CRC)
@@ -367,7 +367,7 @@ class VietQR {
   /// Parses the merchant account information field (ID 38).
   static Map<String, String> _parseMerchantAccountInfo(String merchantAccount) {
     if (merchantAccount.isEmpty) {
-      throw FormatException('Merchant account information is empty');
+      throw const FormatException('Merchant account information is empty');
     }
 
     int index = 0;
@@ -403,7 +403,7 @@ class VietQR {
     }
 
     if (bankBin == null || accountNumber == null) {
-      throw FormatException(
+      throw const FormatException(
           'Could not extract bank BIN or account number from merchant account info');
     }
 
@@ -447,7 +447,7 @@ class VietQR {
     }
 
     if (bankBin == null || accountNumber == null) {
-      throw FormatException(
+      throw const FormatException(
           'Could not extract bank BIN or account number from beneficiary info');
     }
 

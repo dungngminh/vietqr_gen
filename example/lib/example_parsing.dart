@@ -122,10 +122,10 @@ void main() {
 
   // Example 8: Round-trip Verification
   print('8. Round-trip Verification:');
-  final originalBank = Bank.agribank;
-  final originalAccount = '1111111111';
-  final originalAmount = 200000.0;
-  final originalMessage = 'Round-trip test';
+  const originalBank = Bank.agribank;
+  const originalAccount = '1111111111';
+  const originalAmount = 200000.0;
+  const originalMessage = 'Round-trip test';
 
   final roundTripPayload = VietQR.generate(
     bank: originalBank,

@@ -1,6 +1,6 @@
 import 'package:test/test.dart';
-import 'package:vietqr_gen/vietqr_generator.dart';
 import 'package:vietqr_gen/src/utils/crc16.dart';
+import 'package:vietqr_gen/vietqr_generator.dart';
 
 void main() {
   group('VietQR Parsing Tests', () {
@@ -187,7 +187,7 @@ void main() {
       final parsedData = VietQR.parse(originalPayload);
       final map = parsedData.toMap();
 
-      expect(map['bank'], equals('Vietinbank'));
+      expect(map['bank'], equals('VietinBank'));
       expect(map['bankBin'], equals('970415'));
       expect(map['accountNumber'], equals('5555555555'));
       expect(map['amount'], equals(75000.0));
@@ -240,18 +240,18 @@ void main() {
         throwsA(isA<FormatException>().having(
           (e) => e.message,
           'message',
-          'Payload too short to contain valid CRC',
+          'Payload is too short to contain a valid CRC',
         )),
       );
     });
 
     test('should throw error for invalid payload format', () {
       // Create a malformed payload with wrong format indicator
-      final malformedPayload =
+      const malformedPayload =
           '0002010102113802A0000007270106000697040701001096020919960208QRIBFTTA53037045802VN6304';
       // Add a fake CRC
-      final fakeCrc = '1234';
-      final payload = malformedPayload + fakeCrc;
+      const fakeCrc = '1234';
+      const payload = malformedPayload + fakeCrc;
 
       expect(
         () => VietQR.parse(payload),
@@ -448,7 +448,7 @@ void main() {
 
     // test with payload: 00020101021138540010A00000072701240006970407011096020919960208QRIBFTTA53037045802VN830084006304072F
     test('should parse payload with amount and message', () {
-      final payload =
+      const payload =
           '00020101021138540010A00000072701240006970407011096020919960208QRIBFTTA53037045802VN830084006304072F';
       final parsedData = VietQR.parse(payload);
 
